@@ -17,6 +17,8 @@ export class NewsProvider {
   }
 
   getNews():Observable<any>{
-    return this.http.get('http://newsapi.org/v2/everything?domains=wsj.com&apiKey=cfbea736e0ec4db19cda0130c9bd2856');
+    return this.http.get('http://newsapi.org/v2/everything?domains=wsj.com&apiKey=cfbea736e0ec4db19cda0130c9bd2856'); 
   }
 }
+
+//'http://newsapi.org/v2/everything?domains=wsj.com&apiKey=cfbea736e0ec4db19cda0130c9bd2856'

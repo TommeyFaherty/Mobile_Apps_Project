@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>news</ion-title>
   </ion-navbar>
 
@@ -15,10 +15,57 @@
 <ion-content padding>
 
   <ion-list>
-  <ion-item *ngFor="let news of np">
-    <h2>{{news.articles}}</h2>
-    <p>{{news.status}}</p>
-  </ion-item>
+    <ion-item *ngFor="let news of theNews">
+      <h2>{{news.title}}</h2> 
+    </ion-item>
+
+    <p>Bases on the above articles as a whole:</p>
+    <p>1.Where would you rate the stability of the current world from 1-5:</p>
+   <ion-list radio-group [(ngModel)]="worldStatus">
+    <ion-radio value="1"></ion-radio>
+    <ion-radio value="2"></ion-radio>
+    <ion-radio value="3"></ion-radio>
+    <ion-radio value="4"></ion-radio>
+    <ion-radio value="5"></ion-radio>
+    </ion-list>
+
+    <p>2.Are you more excited or fearful of whats to come in the following years(1-fearful 5-excited)</p>
+   <ion-list radio-group [(ngModel)]="excitmentStats">
+    <ion-radio value="1"></ion-radio>
+    <ion-radio value="2"></ion-radio>
+    <ion-radio value="3"></ion-radio>
+    <ion-radio value="4"></ion-radio>
+    <ion-radio value="5"></ion-radio>
+    </ion-list>
+
+    <p>3.Do you the articles are a good general depiction of the world(1-yes 5-No)</p>
+   <ion-list radio-group [(ngModel)]="accurateStats">
+    <ion-radio value="1"></ion-radio>
+    <ion-radio value="2"></ion-radio>
+    <ion-radio value="3"></ion-radio>
+    <ion-radio value="4"></ion-radio>
+    <ion-radio value="5"></ion-radio>
+    </ion-list>
+
+    <p>4.Did they leave you feeling overall good or bad(1-good 5-bad)</p>
+   <ion-list radio-group [(ngModel)]="feelingStats">
+    <ion-radio value=1></ion-radio>
+    <ion-radio value="2"></ion-radio>
+    <ion-radio value="3"></ion-radio>
+    <ion-radio value="4"></ion-radio>
+    <ion-radio value="5"></ion-radio>
+    </ion-list>
+
+    <p>5.Did any of the articles leave you feeling anxious (1-yes 5-No)</p>
+   <ion-list radio-group [(ngModel)]="anxiousStats">
+    <ion-radio value=1></ion-radio>
+    <ion-radio value=2></ion-radio>
+    <ion-radio value="3"></ion-radio>
+    <ion-radio value="4"></ion-radio>
+    <ion-radio value="5"></ion-radio>
+    </ion-list>
   </ion-list>
+
+  <button ion-button (click)="getStatusAndSave()"(click)="saveStatus()">Save</button>
 
 </ion-content>

@@ -1,0 +1,54 @@
+<!--
+  Generated template for the InformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>information</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div padding >
+    <ion-segment [(ngModel)]="Details">
+      <ion-segment-button value="Display">
+        Current Details
+     </ion-segment-button>
+      <ion-segment-button value="Edit">
+        Edit Details
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [(ngSwitch)]="Details">
+    <ion-list *ngSwitchCase="'Display'" inset>
+      <ion-item><h2>Name: {{Name}}</h2></ion-item>
+      <ion-item><h2>Age: {{Age}}</h2></ion-item>
+      <ion-item><h2>Gender: {{Gender}}</h2></ion-item>
+    </ion-list>
+  </div>
+
+  <div [(ngSwitch)]="Details">
+    <ion-list *ngSwitchCase="'Edit'" >
+        <ion-item [(ngModel)]="Name">
+            <ion-label color="primary" stacked >Enter Name:</ion-label>
+            <ion-input placeholder="{{Name}}"></ion-input>
+        </ion-item>
+
+        <ion-item [(ngModel)]="Age">
+            <ion-label color="primary" stacked >Enter Age:</ion-label>
+            <ion-input placeholder="{{Age}}"></ion-input>
+        </ion-item>
+
+        <ion-item [(ngModel)]="Gender">
+            <ion-label color="primary" stacked >Enter Gender:</ion-label>
+            <ion-input placeholder="{{Gender}}"></ion-input>
+        </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Home Page
     </ion-title>
@@ -8,12 +8,31 @@
 
 <ion-content padding>
   <p>This page's purpose is to give a hopefully accurate representation reffering to your relative depiction pertaining to the current state of the world based on randomly chosen articles</p>
-<ion-textarea></ion-textarea>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <h2>Please enter the following details:</h2>
+  <ion-item [(ngModel)]="Name">
+    <ion-label color="primary" stacked >Enter Name:</ion-label>
+    <ion-input placeholder="{{Name}}"></ion-input>
+  </ion-item>
+
+  <ion-item [(ngModel)]="Age">
+    <ion-label color="primary" stacked >Enter Age:</ion-label>
+    <ion-input placeholder="{{Age}}"></ion-input>  
+  </ion-item>
+
+     
+  <ion-item [(ngModel)]="Gender">
+      <ion-label color="primary" stacked >Enter Gender:</ion-label>
+      <ion-input placeholder="{{Gender}}"></ion-input>
+  </ion-item>
+
+  <button color="tertiary" ion-button (click)="saveDetails()">Save Details</button>
+
   <p>To get started click the button</p>
 
-  <button ion-button (click)="openNews()">Go To News Page</button>
+  <button ion-button color="tertiary" (click)="openNews()"><ion-icon name="bulb"></ion-icon> Go To News Page</button>
+  <button ion-button color="tertiary" (click)="openSettings()"><ion-icon name="filing"></ion-icon>Go To Settings Page</button>
+  <button ion-button color="tertiary" (click)="openInformation()"><ion-icon name="hammer"></ion-icon>Go To Edit Status</button>
+
+  <ion-title>Your last status: {{myStatus}}</ion-title>
 </ion-content>
