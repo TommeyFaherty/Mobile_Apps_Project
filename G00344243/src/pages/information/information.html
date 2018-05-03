@@ -14,7 +14,7 @@
 
 <ion-content padding>
   <div padding >
-    <ion-segment color="tertiary" [(ngModel)]="Details">
+    <ion-segment color="secondary" [(ngModel)]="Details">
       <ion-segment-button value="Display">
         Current Details
      </ion-segment-button>
@@ -37,27 +37,27 @@
   <div [(ngSwitch)]="Details">
     <ion-list *ngSwitchCase="'Edit'" >
         <ion-item [(ngModel)]="Name">
-            <ion-label color="primary" stacked >Enter Name:</ion-label>
+            <ion-label color="tertiary" stacked >Enter Name:</ion-label>
             <ion-input placeholder="{{Name}}"></ion-input>
         </ion-item>
 
         <ion-item [(ngModel)]="Age">
-            <ion-label color="primary" stacked >Enter Age:</ion-label>
+            <ion-label color="tertiary" stacked >Enter Age:</ion-label>
             <ion-input placeholder="{{Age}}"></ion-input>
         </ion-item>
 
         <ion-item [(ngModel)]="Gender">
-            <ion-label color="primary" stacked >Enter Gender:</ion-label>
+            <ion-label color="tertiary" stacked >Enter Gender:</ion-label>
             <ion-input placeholder="{{Gender}}"></ion-input>
         </ion-item>
 
         <ion-item [(ngModel)]="favLang">
-            <ion-label color="primary" stacked >Enter Favourite programing language:</ion-label>
+            <ion-label color="tertiary" stacked >Enter Favourite programing language:</ion-label>
             <ion-input placeholder="{{favLang}}"></ion-input>
         </ion-item>
 
         <ion-item [(ngModel)]="college">
-            <ion-label color="primary" stacked >Enter what college you go to:</ion-label>
+            <ion-label color="tertiary" stacked >Enter what college you go to:</ion-label>
             <ion-input placeholder="{{college}}"></ion-input>
         </ion-item>
 

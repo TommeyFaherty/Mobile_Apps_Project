@@ -8,17 +8,17 @@
 
 <ion-content padding>
   <div>
-  <h4>This page's purpose is to give a hopefully accurate representation reffering to your relative depiction pertaining to the current state of the world based on randomly chosen articles.</h4>
+  <h4>The purpose of this project is to give a representation reffering to your relative depiction in relation to the current state of the world based on randomly chosen articles.</h4>
   </div>
 
   <ion-item [(ngModel)]="Name">
-    <ion-label color="fourth" stacked >Enter Name:</ion-label>
-    <ion-input color="dark" placeholder="{{Name}}"></ion-input>
+    <ion-label color="secondary" stacked >Enter Name:</ion-label>
+    <ion-input color="secondary" placeholder="{{Name}}"></ion-input>
   </ion-item>
 
   <button color="tertiary" ion-button (click)="saveDetails()">Save Details</button>
   <p>Hello {{Name}}, According to your last session you are feeling:</p>
-  <h5>{{myStatus}}</h5> 
+  <h5><u>{{myStatus}}</u></h5> 
   <p>To get started, go to the news page</p>
 
   <button ion-button color="tertiary" (click)="openNews()"><ion-icon name="bulb"></ion-icon>Go To News Page</button>

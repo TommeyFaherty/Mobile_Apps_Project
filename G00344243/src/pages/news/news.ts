@@ -54,10 +54,10 @@ export class NewsPage {
       this.myStatus = "Unphased";
       break;
       case 4:
-      this.myStatus = "Pleased";
+      this.myStatus = "Relatively Happy";
       break;
       case 5:
-      this.myStatus = "Happy";
+      this.myStatus = "Enthused";
       break;
     } 
   }
