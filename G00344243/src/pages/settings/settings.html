@@ -1,0 +1,45 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-icon color="tertiary" name="battery-full" item-start></ion-icon>
+      <ion-label fixed>Battery</ion-label>
+      <ion-toggle color="secondary" checked="true" item-end></ion-toggle>
+    </ion-item>
+
+    
+    <ion-item>
+    <ion-icon color="tertiary" name="flash" item-start></ion-icon>
+    <ion-label>Flashlight</ion-label>
+    <ion-toggle color="secondary" checked="true" item-end></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+    <ion-icon color="tertiary" name="pulse" item-start></ion-icon>
+    <ion-label>Insomnia</ion-label>
+    <ion-toggle color="secondary" [(ngModel)]="insomniaCheck" checked="true" (ionChange)="switchInsomnia()" item-end></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon color="tertiary" name="sunny" item-start></ion-icon>
+        <ion-label>Brightness</ion-label>
+    </ion-item>
+
+    <ion-item><ion-range color="secondary" min="0.1" max="10" step="1" pin="true" (ionChange)="brightnessSlider()"[(ngModel)]="brightnessValue"></ion-range></ion-item>
+
+  </ion-list>
+</ion-content>
