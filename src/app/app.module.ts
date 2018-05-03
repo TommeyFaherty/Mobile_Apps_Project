@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import {HttpClientModule } from '@angular/common/http';
 import {IonicStorageModule } from '@ionic/storage';
+import { BatteryStatus } from '@ionic-native/battery-status';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -39,7 +40,8 @@ import { NewsProvider } from '../providers/news/news';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NewsProvider
+    NewsProvider,
+    BatteryStatus
   ]
 })
 export class AppModule {}

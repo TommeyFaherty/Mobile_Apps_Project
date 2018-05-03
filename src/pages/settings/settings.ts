@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BatteryStatus, BatteryStatusResponse } from '@ionic-native/battery-status';
 
 /**
  * Generated class for the SettingsPage page.
@@ -15,11 +16,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  subscription: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private batteryStatus: BatteryStatus) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
+    //Watch change in battery status
+     this.subscription = this.batteryStatus.onChange().subscribe(status =>
+    {
+      console.log(status.level,status.isPlugged);
+    });
   }
 
+  ionViewWillLeave()
+  {
+    //Stop watch
+    this.subscription.unsubscribe();
+  }
+  
 }
