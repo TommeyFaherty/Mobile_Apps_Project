@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BatteryStatus, BatteryStatusResponse } from '@ionic-native/battery-status';
 import { Insomnia } from '@ionic-native/insomnia';
 import { Brightness } from '@ionic-native/brightness';
+import { Flashlight } from '@ionic-native/flashlight';
 
 /**
  * Generated class for the SettingsPage page.
@@ -18,35 +18,22 @@ import { Brightness } from '@ionic-native/brightness';
 })
 export class SettingsPage {
 
-  subscription: any;
   insomniaCheck: boolean;
   brightnessNum: number;
   brightnessValue: number;
+  flashCheck: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private batteryStatus: BatteryStatus,
-    private insomnia: Insomnia,private brightness:Brightness) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private insomnia: Insomnia,private brightness:Brightness,private flashlight: Flashlight) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
-    //Watch change in battery status
-     this.subscription = this.batteryStatus.onChange().subscribe(status =>
-    {
-      console.log(status.level,status.isPlugged);
-    });
   }
-
-  ionViewWillLeave()
-    {
-      //Stop watch
-      this.subscription.unsubscribe();
-    }
 
   //Turn on Insomnia Mode
   switchInsomnia()
   {
-    console.log(3);
-    console.log(this.insomniaCheck);
 
     if(this.insomniaCheck == true)
     {
@@ -72,6 +59,20 @@ export class SettingsPage {
     //So brightness is ranged from 0.1 - 1 giving it more than two options on the slider
     this.brightnessNum = this.brightnessValue/10;
     this.brightness.setBrightness(this.brightnessNum);
+  }
+
+  //Turn on and off flashlight
+  switchFlash()
+  {
+    this.flashlight.toggle();
+    /*this.flashlight.available();
+    if(this.flashCheck ==  true)
+    {
+      this.flashlight.switchOn();
+    }
+    else{
+      this.flashlight.switchOff();
+    }*/
   }
 
 }

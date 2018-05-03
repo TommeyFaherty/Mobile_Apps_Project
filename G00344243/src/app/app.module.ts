@@ -5,9 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import {HttpClientModule } from '@angular/common/http';
 import {IonicStorageModule } from '@ionic/storage';
-import { BatteryStatus } from '@ionic-native/battery-status';
-import { Insomnia } from '@ionic-native/insomnia' ;
-import { Brightness } from '@ionic-native/brightness' ;
+import { Insomnia } from '@ionic-native/insomnia';
+import { Brightness } from '@ionic-native/brightness';
+import { Flashlight } from '@ionic-native/flashlight';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -43,9 +43,9 @@ import { NewsProvider } from '../providers/news/news';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NewsProvider,
-    BatteryStatus,
     Insomnia,
-    Brightness
+    Brightness,
+    Flashlight
   ]
 })
 export class AppModule {}

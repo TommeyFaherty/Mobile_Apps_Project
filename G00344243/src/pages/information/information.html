@@ -29,6 +29,8 @@
       <ion-item><h2>Name: {{Name}}</h2></ion-item>
       <ion-item><h2>Age: {{Age}}</h2></ion-item>
       <ion-item><h2>Gender: {{Gender}}</h2></ion-item>
+      <ion-item><h2>Favourite Programming Langage: {{favLang}}</h2></ion-item>
+      <ion-item><h2>College Attending: {{college}}</h2></ion-item>
     </ion-list>
   </div>
 
@@ -48,6 +50,18 @@
             <ion-label color="primary" stacked >Enter Gender:</ion-label>
             <ion-input placeholder="{{Gender}}"></ion-input>
         </ion-item>
+
+        <ion-item [(ngModel)]="favLang">
+            <ion-label color="primary" stacked >Enter Favourite programing language:</ion-label>
+            <ion-input placeholder="{{favLang}}"></ion-input>
+        </ion-item>
+
+        <ion-item [(ngModel)]="college">
+            <ion-label color="primary" stacked >Enter what college you go to:</ion-label>
+            <ion-input placeholder="{{college}}"></ion-input>
+        </ion-item>
+
+        <button ion-button color="tertiary" (click)="saveStatus()">Save</button>
     </ion-list>
   </div>
 

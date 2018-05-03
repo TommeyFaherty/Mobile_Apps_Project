@@ -19,6 +19,8 @@ export class InformationPage {
   Name: string;
   Age: string;
   Gender: string;
+  favLang: string;
+  college: string;
   Details: string = "Display";
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage) {
@@ -54,6 +56,37 @@ export class InformationPage {
      .catch((err) => {
       alert("Error accessing Storage")
       })
+
+      //Load favourite Language
+      this.storage.get("favLang")
+      .then((data) =>
+      {
+        this.favLang = data;
+      })
+     .catch((err) => {
+      alert("Error accessing Storage")
+      })
+
+      //Load college
+      this.storage.get("college")
+      .then((data) =>
+      {
+        this.college = data;
+      })
+     .catch((err) => {
+      alert("Error accessing Storage")
+      })
     }
+
+    saveStatus()
+  {
+     //Save Status
+    this.storage.set("Name",this.Name);
+    this.storage.set("Age",this.Age);
+    this.storage.set("Gender",this.Gender);
+    this.storage.set("favLang",this.favLang);
+    this.storage.set("college",this.college);
+    //this.navCtrl.pop();
+  }
    // console.log('ionViewDidLoad InformationPage');
   }

@@ -7,21 +7,23 @@
 </ion-header>
 
 <ion-content padding>
-  <p>This page's purpose is to give a hopefully accurate representation reffering to your relative depiction pertaining to the current state of the world based on randomly chosen articles</p>
+  <div>
+  <h4>This page's purpose is to give a hopefully accurate representation reffering to your relative depiction pertaining to the current state of the world based on randomly chosen articles.</h4>
+  </div>
 
-  <h2>Please enter the following details:</h2>
   <ion-item [(ngModel)]="Name">
-    <ion-label color="primary" stacked >Enter Name:</ion-label>
-    <ion-input placeholder="{{Name}}"></ion-input>
+    <ion-label color="fourth" stacked >Enter Name:</ion-label>
+    <ion-input color="dark" placeholder="{{Name}}"></ion-input>
   </ion-item>
 
   <button color="tertiary" ion-button (click)="saveDetails()">Save Details</button>
-
-  <p>To get started click the button</p>
+  <p>Hello {{Name}}, According to your last session you are feeling:</p>
+  <h5>{{myStatus}}</h5> 
+  <p>To get started, go to the news page</p>
 
   <button ion-button color="tertiary" (click)="openNews()"><ion-icon name="bulb"></ion-icon>Go To News Page</button>
   <button ion-button color="tertiary" (click)="openSettings()"><ion-icon name="filing"></ion-icon>Go To Settings Page</button>
   <button ion-button color="tertiary" (click)="openInformation()"><ion-icon name="hammer"></ion-icon>Go To Edit Status</button>
 
-  <ion-title>Your last status: {{myStatus}}</ion-title>
+  
 </ion-content>

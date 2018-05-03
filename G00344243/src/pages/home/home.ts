@@ -11,7 +11,7 @@ import { Storage } from '@ionic/storage';
 })
 export class HomePage {
   
-  myStatus: string;
+  myStatus: string = "unKnown";
   Name: string;
   Gender: string;
   Age: string;
@@ -43,6 +43,16 @@ export class HomePage {
     })
    .catch((err) => {
     alert("Error accessing Storage")
+  })
+
+  //Load Name
+  this.storage.get("Name")
+  .then((data) =>
+  {
+    this.Name = data;
+  })
+  .catch((err) => {
+  alert("Error accessing Storage")
   })
   }
 
